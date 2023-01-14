@@ -11,6 +11,8 @@ export const data = [
   },
 ];
 
+export type Data = typeof data;
+
 export function fetchData(): Promise<typeof data> {
   return new Promise((resolve, reject) => {
     setTimeout(() => resolve(data), Math.random() * 1000);

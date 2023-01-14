@@ -1,11 +1,10 @@
+import { ClientComponent } from "@/components/ClientComponent";
+import type { Data } from "@/lib/data";
+
 type ServerComponentProps = {
-  data: {
-    name: string;
-    startDate: Date;
-    endDate: Date;
-  }[];
+  data: Data;
 };
 
 export function ServerComponent({ data }: ServerComponentProps) {
-  return <pre>{typeof data[0].startDate}</pre>;
+  return <ClientComponent data={data} data-json />;
 }
