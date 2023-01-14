@@ -6,5 +6,5 @@ type ServerComponentProps = {
 };
 
 export function ServerComponent({ data }: ServerComponentProps) {
-  return <ClientComponent data={data} data-json />;
+  return <ClientComponent data={data} data-superjson />;
 }

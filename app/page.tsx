@@ -1,30 +1,26 @@
-import { AsyncComponent } from "@/components/AsyncComponent";
-import { AsyncComponentSimple } from "@/components/AsyncComponentSimple";
-import { Suspense } from "react";
+import Link from "next/link";
 
-export default async function Home() {
+export default function Page() {
   return (
-    <main>
-      <h1>Reproduction</h1>
-      <p>
-        {
-          "Suspense > Async Component > Server Component > Client Component (with data-json attribute), renders 'string' instead of the expected 'object':"
-        }
-      </p>
-      <Suspense fallback={<pre>loading...</pre>}>
-        {/* @ts-expect-error */}
-        <AsyncComponent />
-      </Suspense>
-      <p>If we take out the Server Component the same happens:</p>
-      <p>
-        {
-          "Suspense > Async Component > Client Component (with data-json attribute) still renders 'string' instead of the expected 'object':"
-        }
-      </p>
-      <Suspense fallback={<pre>loading...</pre>}>
-        {/* @ts-expect-error */}
-        <AsyncComponentSimple />
-      </Suspense>
-    </main>
+    <ul>
+      <li>
+        <Link href="/suspense">Suspense</Link>
+      </li>
+      <li>
+        <Link href="/suspense-2">Suspense 2</Link>
+      </li>
+      <li>
+        <Link href="/page-data-fetching">Page data fetching</Link>
+      </li>
+      <li>
+        <Link href="/page-data-fetching-2">Page data fetching 2</Link>
+      </li>
+      <li>
+        <Link href="/page-data-import">Page data import</Link>
+      </li>
+      <li>
+        <Link href="/page-data-import-2">Page data import 2</Link>
+      </li>
+    </ul>
   );
 }
